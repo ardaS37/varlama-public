@@ -22,7 +22,7 @@ The pin mapping and PlatformIO dependencies are documented in `platformio.ini` a
 
 The `android-phone-card/` module turns an NFC-capable Android phone into a reusable attendance card. The app stores a provisioned credential locally and exposes it through Android Host Card Emulation (HCE). An administrator can open the phone-provisioning mode on the ESP32, write a one-time credential to the phone, and then use the phone at the reader like a physical card.
 
-The phone app is intentionally small: it provides a provisioning screen, secure local storage for the assigned credential, and an HCE service that responds only to the Yoklama application protocol. It does not contain a server account or a hard-coded student list.
+The phone app is intentionally small: it provides a provisioning screen, secure local storage for the assigned credential, and an HCE service that responds only to the Varlama application protocol. It does not contain a server account or a hard-coded student list.
 
 ### Android setup
 
@@ -32,6 +32,22 @@ The phone app is intentionally small: it provides a provisioning screen, secure 
 4. Arm provisioning from the app, then use the ESP32 web panel to assign the phone.
 
 Build output and signing files are intentionally ignored and are not part of this repository.
+
+## Hardware design and schematics
+
+The repository includes the current DIP/THT PCB design under [`hardware/dip-v1`](hardware/dip-v1). It contains the KiCad project, schematic, routed two-layer board, BOM, pinout, Gerber manufacturing files, verification reports, and exported drawings.
+
+### Schematic preview
+
+![Varlama DIP v1 schematic](hardware/dip-v1/exports/yoklama-dip-v1.png)
+
+### Board and assembly previews
+
+![Varlama DIP v1 board](hardware/dip-v1/exports/board.png)
+
+![Varlama DIP v1 assembly](hardware/dip-v1/exports/preview.png)
+
+These drawings document the current prototype layout. They are not a substitute for checking the physical modules, USB power budget, antenna clearances, and first assembled prototype before manufacturing.
 
 ## Data and privacy notes
 
